@@ -1,0 +1,67 @@
+[
+    {
+      "password": "hashedpassword1",
+      "username": "dragonMaster",
+      "email": "dragon.master@example.com",
+      "createdAt": "2024-10-01T08:30:00.000Z",
+      "updatedAt": "2024-10-01T08:30:00.000Z",
+      "status": "online"
+    },
+    {
+      "password": "hashedpassword2",
+      "username": "starGazer",
+      "email": "star.gazer@example.com",
+      "createdAt": "2024-10-02T09:45:00.000Z",
+      "updatedAt": "2024-10-02T09:45:00.000Z",
+      "status": "offline"
+    },
+    {
+      "password": "hashedpassword3",
+      "username": "mysticElf",
+      "email": "mystic.elf@example.com",
+      "createdAt": "2024-10-03T10:15:00.000Z",
+      "updatedAt": "2024-10-03T10:15:00.000Z",
+      "status": "online"
+    },
+    {
+      "password": "hashedpassword4",
+      "username": "cyberNinja",
+      "email": "cyber.ninja@example.com",
+      "createdAt": "2024-10-04T11:20:00.000Z",
+      "updatedAt": "2024-10-04T11:20:00.000Z",
+      "status": "offline"
+    },
+    {
+      "password": "hashedpassword5",
+      "username": "spacePirate",
+      "email": "space.pirate@example.com",
+      "createdAt": "2024-10-05T12:50:00.000Z",
+      "updatedAt": "2024-10-05T12:50:00.000Z",
+      "status": "offline"
+    },
+    {
+      "password": "hashedpassword6",
+      "username": "shadowHunter",
+      "email": "shadow.hunter@example.com",
+      "createdAt": "2024-10-06T13:35:00.000Z",
+      "updatedAt": "2024-10-06T13:35:00.000Z",
+      "status": "online"
+    },
+    {
+      "password": "hashedpassword7",
+      "username": "lunaWolf",
+      "email": "luna.wolf@example.com",
+      "createdAt": "2024-10-07T14:10:00.000Z",
+      "updatedAt": "2024-10-07T14:10:00.000Z",
+      "status": "offline"
+    },
+    {
+      "password": "hashedpassword8",
+      "username": "skyWalker",
+      "email": "sky.walker@example.com",
+      "createdAt": "2024-10-08T15:25:00.000Z",
+      "updatedAt": "2024-10-08T15:25:00.000Z",
+      "status": "online"
+    }
+  ]
+  

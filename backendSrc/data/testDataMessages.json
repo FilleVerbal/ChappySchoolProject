@@ -1,0 +1,150 @@
+[
+    {
+      "content": "Hello everyone in the general channel!",
+      "channelId": "652aef4f9b3c6a0012345678",
+      "createdAt": "2024-10-05T09:00:00.000Z",
+      "updatedAt": "2024-10-05T09:00:00.000Z",
+      "likes": 5,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345678",
+      "content": "Hey, how's everyone doing?",
+      "channelId": "652aef4f9b3c6a0012345678",
+      "createdAt": "2024-10-05T09:15:00.000Z",
+      "updatedAt": "2024-10-05T09:15:00.000Z",
+      "likes": 2,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345679",
+      "content": "I am ready for the new game night!",
+      "channelId": "652aef4f9b3c6a0012345679",
+      "createdAt": "2024-10-06T10:00:00.000Z",
+      "updatedAt": "2024-10-06T10:00:00.000Z",
+      "likes": 10,
+      "dislikes": 1
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345679",
+      "content": "Hey @mysticElf, are you joining too?",
+      "channelId": "652aef4f9b3c6a0012345679",
+      "createdAt": "2024-10-06T10:10:00.000Z",
+      "updatedAt": "2024-10-06T10:10:00.000Z",
+      "likes": 3,
+      "dislikes": 0
+    },
+    {
+      "content": "Hi all! Need some help with JavaScript!",
+      "channelId": "652aef4f9b3c6a0012345680",
+      "createdAt": "2024-10-07T11:00:00.000Z",
+      "updatedAt": "2024-10-07T11:00:00.000Z",
+      "likes": 4,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345680",
+      "content": "Check out the memes I found!",
+      "channelId": "652aef4f9b3c6a0012345681",
+      "createdAt": "2024-10-08T12:15:00.000Z",
+      "updatedAt": "2024-10-08T12:15:00.000Z",
+      "likes": 15,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345681",
+      "content": "Let's keep this meme-central alive!",
+      "channelId": "652aef4f9b3c6a0012345681",
+      "createdAt": "2024-10-08T12:20:00.000Z",
+      "updatedAt": "2024-10-08T12:20:00.000Z",
+      "likes": 8,
+      "dislikes": 2
+    },
+    {
+      "content": "This is a test message from a guest in the general channel.",
+      "channelId": "652aef4f9b3c6a0012345678",
+      "createdAt": "2024-10-05T09:30:00.000Z",
+      "updatedAt": "2024-10-05T09:30:00.000Z",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345682",
+      "content": "We need to finalize the project soon!",
+      "channelId": "652aef4f9b3c6a0012345682",
+      "createdAt": "2024-10-09T13:00:00.000Z",
+      "updatedAt": "2024-10-09T13:00:00.000Z",
+      "likes": 12,
+      "dislikes": 1
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345679",
+      "content": "Working hard on the coding-help!",
+      "channelId": "652aef4f9b3c6a0012345680",
+      "createdAt": "2024-10-07T11:10:00.000Z",
+      "updatedAt": "2024-10-07T11:10:00.000Z",
+      "likes": 7,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345678",
+      "content": "Private chat, I need help with code!",
+      "recipientId": "652aef4f9b3c6a0012345679",
+      "createdAt": "2024-10-07T13:45:00.000Z",
+      "updatedAt": "2024-10-07T13:45:00.000Z",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345679",
+      "content": "Sure, I'm available for a chat.",
+      "recipientId": "652aef4f9b3c6a0012345678",
+      "createdAt": "2024-10-07T13:50:00.000Z",
+      "updatedAt": "2024-10-07T13:50:00.000Z",
+      "likes": 3,
+      "dislikes": 0
+    },
+    {
+      "content": "Guest messaging is fun!",
+      "channelId": "652aef4f9b3c6a0012345680",
+      "createdAt": "2024-10-07T11:25:00.000Z",
+      "updatedAt": "2024-10-07T11:25:00.000Z",
+      "likes": 2,
+      "dislikes": 1
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345678",
+      "content": "What memes should we add here?",
+      "channelId": "652aef4f9b3c6a0012345681",
+      "createdAt": "2024-10-08T12:30:00.000Z",
+      "updatedAt": "2024-10-08T12:30:00.000Z",
+      "likes": 5,
+      "dislikes": 0
+    },
+    {
+      "content": "Just checking in as a guest on the private-projects channel.",
+      "channelId": "652aef4f9b3c6a0012345682",
+      "createdAt": "2024-10-09T14:00:00.000Z",
+      "updatedAt": "2024-10-09T14:00:00.000Z",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345681",
+      "content": "Can't wait for the new project release!",
+      "channelId": "652aef4f9b3c6a0012345682",
+      "createdAt": "2024-10-09T15:10:00.000Z",
+      "updatedAt": "2024-10-09T15:10:00.000Z",
+      "likes": 14,
+      "dislikes": 0
+    },
+    {
+      "senderId": "652aef4f9b3c6a0012345678",
+      "content": "Sent you the code snippets!",
+      "recipientId": "652aef4f9b3c6a0012345680",
+      "createdAt": "2024-10-07T16:00:00.000Z",
+      "updatedAt": "2024-10-07T16:00:00.000Z",
+      "likes": 1,
+      "dislikes": 0
+    }
+]

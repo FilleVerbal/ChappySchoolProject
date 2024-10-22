@@ -1,25 +1,32 @@
 import { ObjectId } from 'mongodb'
-interface UserProfile {
+
+export interface UserProfile {
     password: string;
     username: string;
+    email: string;
     createdAt: Date;
     updatedAt: Date;
     status: string
 }
 
-interface Message {
-    senderId: ObjectId;
+export interface Message {
+    senderId?: ObjectId;
     content: string;
     channelId?: ObjectId;
     recipientId?: ObjectId;
     createdAt: Date;
+    updatedAt: Date;
     likes: number;
+    dislikes: number;
 }
 
-interface Channels {
+export interface Channel {
     name: string;
     isLocked: boolean;
     participants: ObjectId[];
     createdAt: Date;
+    updatedAt: Date;
+    createdBy: ObjectId;
 }
 
+// export { UserProfile, Message, Channel }

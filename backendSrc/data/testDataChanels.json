@@ -1,0 +1,43 @@
+[
+    {
+      "name": "general",
+      "isLocked": false,
+      "participants": ["652aef4f9b3c6a0012345678", "652aef4f9b3c6a0012345679"],
+      "createdAt": "2024-10-05T08:00:00.000Z",
+      "updatedAt": "2024-10-05T08:00:00.000Z",
+      "createdBy": "652aef4f9b3c6a0012345678"
+    },
+    {
+      "name": "gaming",
+      "isLocked": true,
+      "participants": ["652aef4f9b3c6a0012345679", "652aef4f9b3c6a0012345680"],
+      "createdAt": "2024-10-06T09:15:00.000Z",
+      "updatedAt": "2024-10-06T09:15:00.000Z",
+      "createdBy": "652aef4f9b3c6a0012345679"
+    },
+    {
+      "name": "coding-help",
+      "isLocked": false,
+      "participants": ["652aef4f9b3c6a0012345680", "652aef4f9b3c6a0012345681"],
+      "createdAt": "2024-10-07T10:30:00.000Z",
+      "updatedAt": "2024-10-07T10:30:00.000Z",
+      "createdBy": "652aef4f9b3c6a0012345680"
+    },
+    {
+      "name": "meme-central",
+      "isLocked": false,
+      "participants": ["652aef4f9b3c6a0012345681", "652aef4f9b3c6a0012345682"],
+      "createdAt": "2024-10-08T11:45:00.000Z",
+      "updatedAt": "2024-10-08T11:45:00.000Z",
+      "createdBy": "652aef4f9b3c6a0012345681"
+    },
+    {
+      "name": "private-projects",
+      "isLocked": true,
+      "participants": ["652aef4f9b3c6a0012345682", "652aef4f9b3c6a0012345678"],
+      "createdAt": "2024-10-09T12:00:00.000Z",
+      "updatedAt": "2024-10-09T12:00:00.000Z",
+      "createdBy": "652aef4f9b3c6a0012345682"
+    }
+  ]
+  
