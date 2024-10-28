@@ -1,4 +1,4 @@
-import { WithId, InsertOneResult, UpdateResult, ObjectId, DeleteResult } from "mongodb"
+import { WithId, InsertOneResult } from "mongodb"
 import { UserProfile } from '../data/datastructures.js'
 import { getUserCollection } from "../database/getdb.js"
 
@@ -22,39 +22,39 @@ async function postNewUser(newUser: UserProfile): Promise<InsertOneResult<UserPr
     }
 }
 
-async function updateUser(id: string, updatedUser: Partial<UserProfile>): Promise<UpdateResult> {
-    const col = getUserCollection()
-    let objectId: ObjectId
-    try {
-        objectId = new ObjectId(id)
-    } catch (error) {
-        throw new Error('Invalid id')
-    }
-    try {
-        const result: UpdateResult = await col.updateOne({_id: objectId}, {$set: updatedUser})
-        return result
-    } catch (error) {
-        throw new Error('Could not update the collection')
-    }
-}
+// async function updateUser(id: string, updatedUser: Partial<UserProfile>): Promise<UpdateResult> {
+//     const col = getUserCollection()
+//     let objectId: ObjectId
+//     try {
+//         objectId = new ObjectId(id)
+//     } catch (error) {
+//         throw new Error('Invalid id')
+//     }
+//     try {
+//         const result: UpdateResult = await col.updateOne({_id: objectId}, {$set: updatedUser})
+//         return result
+//     } catch (error) {
+//         throw new Error('Could not update the collection')
+//     }
+// }
 
-async function deleteUser(id: string): Promise<DeleteResult> {
-    const col = getUserCollection()
-    let objectId: ObjectId
-    try {
-        objectId = new ObjectId(id)
-    } catch (error) {
-        throw new Error('Invalid id')
-    }
-    try {
-        const result: DeleteResult = await col.deleteOne({_id: objectId})
-        if (result.deletedCount === 0) {
-            throw new Error(`id: ${id} not found`)
-        }
-        return result
-    } catch (error) {
-        throw new Error('Could not delete from collection')
-    }
-}
+// async function deleteUser(id: string): Promise<DeleteResult> {
+//     const col = getUserCollection()
+//     let objectId: ObjectId
+//     try {
+//         objectId = new ObjectId(id)
+//     } catch (error) {
+//         throw new Error('Invalid id')
+//     }
+//     try {
+//         const result: DeleteResult = await col.deleteOne({_id: objectId})
+//         if (result.deletedCount === 0) {
+//             throw new Error(`id: ${id} not found`)
+//         }
+//         return result
+//     } catch (error) {
+//         throw new Error('Could not delete from collection')
+//     }
+// }
 
-export { getAllUsers, postNewUser, updateUser, deleteUser }
+export { getAllUsers, postNewUser }

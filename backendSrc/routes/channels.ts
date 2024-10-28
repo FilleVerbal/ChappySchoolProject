@@ -2,6 +2,7 @@ import express, { Request, Response, Router } from 'express'
 import { WithId } from 'mongodb'
 import { Channel } from '../data/datastructures.js'
 import { getAllChannels, postNewChannel } from '../endpoints/getChanels.js'
+import { validateChannel } from '../validation/channelValidation.js'
 
 export const router: Router = express.Router()
 
@@ -15,6 +16,11 @@ router.get('/', async (_, res: Response<WithId<Channel>[]>): Promise<void> => {
 })
 
 router.post('/', async (req: Request, res: Response): Promise<void> => {
+    const validationResult = validateChannel(req.body)
+    if (!validationResult.success) {
+        res.status(400).json({error: validationResult.error}); 
+        return
+    }
     try {
         const newChannel: Channel = req.body as Channel
         const createdChannel = await postNewChannel(newChannel)

@@ -23,7 +23,7 @@ export interface Message {
 export interface Channel {
     name: string;
     isLocked: boolean;
-    participants: ObjectId[];
+    participants?: ObjectId[];
     createdAt: Date;
     updatedAt: Date;
     createdBy: ObjectId;

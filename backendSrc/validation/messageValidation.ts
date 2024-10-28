@@ -1,7 +1,7 @@
 import { Message } from "../data/datastructures.js";
 import Joi from 'joi'
 
-type validationResult = ValidationSuccess | ValidationFailure
+export type validationResult = ValidationSuccess | ValidationFailure
 
 interface ValidationSuccess {
     success: true;
