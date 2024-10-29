@@ -22,6 +22,16 @@ async function postNewUser(newUser: UserProfile): Promise<InsertOneResult<UserPr
     }
 }
 
+async function checkUsersForLogin(email: string, password: string): Promise<WithId<UserProfile> | null> {
+    const users = await getAllUsers()
+    const correctUser = users.find(user => user.email === email)
+    if (correctUser && correctUser.password === password) {
+        return correctUser
+    } else {
+        return null
+    }
+}
+
 // async function updateUser(id: string, updatedUser: Partial<UserProfile>): Promise<UpdateResult> {
 //     const col = getUserCollection()
 //     let objectId: ObjectId
@@ -57,4 +67,4 @@ async function postNewUser(newUser: UserProfile): Promise<InsertOneResult<UserPr
 //     }
 // }
 
-export { getAllUsers, postNewUser }
+export { getAllUsers, postNewUser, checkUsersForLogin }

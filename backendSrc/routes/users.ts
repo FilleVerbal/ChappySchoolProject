@@ -1,8 +1,11 @@
 import express, { Request, Response, Router } from 'express'
 import { WithId } from 'mongodb'
+import jwt from 'jsonwebtoken'
 import { UserProfile } from '../data/datastructures.js'
-import { getAllUsers, postNewUser } from '../endpoints/users.js'
+import { getAllUsers, postNewUser, checkUsersForLogin } from '../endpoints/users.js'
 import { validateNewUser } from '../validation/validateUserCreation.js';
+
+// const { sign, verify } = jwt
 
 export const router: Router = express.Router();
 
@@ -26,6 +29,36 @@ router.post('/create', async (req: Request, res: Response): Promise<void> => {
         const createdUser =  await postNewUser(newUser)
         res.status(201).send(createdUser)
     } catch (error) {
+        res.sendStatus(500)
+    }
+})
+
+router.post('/login', async (req: Request, res: Response): Promise<void> => {
+    if (!process.env.SECRET_KEY) {
+        res.sendStatus(505)
+        return
+    }
+    try {
+        const { email, password } = req.body
+        if (!email || !password) {
+            res.sendStatus(400);
+            return
+        }
+        const user = await checkUsersForLogin(email, password)
+        if (!user) {
+            res.sendStatus(401);
+            return
+        }
+
+        const token = jwt.sign(
+            { userid: user._id, email: user.email },
+            String(process.env.SECRET_KEY) 
+        )
+        console.log('Secret key: ', process.env.SECRET_KEY);
+        res.status(200).send({ token })
+    } catch (error) {
+        
+        console.error('login error: ', error)
         res.sendStatus(500)
     }
 })
