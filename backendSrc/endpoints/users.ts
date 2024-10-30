@@ -12,6 +12,16 @@ async function getAllUsers(): Promise<WithId<UserProfile>[]> {
     }
 }
 
+async function getallUsersProjected(): Promise<WithId<UserProfile>[]> {
+    const col = getUserCollection()
+    try {
+        const result: WithId<UserProfile>[] = await col.find({}, {projection: {username: 1}}).toArray()
+        return result;
+    }catch (error) {
+        throw new Error('Could not get projected users')
+    }
+}
+
 async function postNewUser(newUser: UserProfile): Promise<InsertOneResult<UserProfile>> {
     const col = getUserCollection()
     try {
@@ -67,4 +77,4 @@ async function checkUsersForLogin(email: string, password: string): Promise<With
 //     }
 // }
 
-export { getAllUsers, postNewUser, checkUsersForLogin }
+export { getAllUsers, postNewUser, checkUsersForLogin, getallUsersProjected }

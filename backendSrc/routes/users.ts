@@ -2,7 +2,7 @@ import express, { Request, Response, Router } from 'express'
 import { WithId } from 'mongodb'
 import jwt from 'jsonwebtoken'
 import { UserProfile } from '../data/datastructures.js'
-import { getAllUsers, postNewUser, checkUsersForLogin } from '../endpoints/users.js'
+import { postNewUser, checkUsersForLogin, getallUsersProjected } from '../endpoints/users.js'
 import { validateNewUser } from '../validation/validateUserCreation.js';
 
 // const { sign, verify } = jwt
@@ -11,7 +11,7 @@ export const router: Router = express.Router();
 
 router.get('/', async (_, res: Response<WithId<UserProfile>[]>): Promise<void> => {
     try {
-        const allUsers: WithId<UserProfile>[] = await getAllUsers()
+        const allUsers: WithId<UserProfile>[] = await getallUsersProjected()
         res.status(200).send(allUsers)
     } catch (error) {
         res.sendStatus(500)
@@ -33,6 +33,7 @@ router.post('/create', async (req: Request, res: Response): Promise<void> => {
     }
 })
 
+//  fråga om hjälp här, den laddar inte process.env.SECRET_KEY, som är undefined for resons unknown
 router.post('/login', async (req: Request, res: Response): Promise<void> => {
     if (!process.env.SECRET_KEY) {
         res.sendStatus(505)
@@ -54,7 +55,6 @@ router.post('/login', async (req: Request, res: Response): Promise<void> => {
             { userid: user._id, email: user.email },
             String(process.env.SECRET_KEY) 
         )
-        console.log('Secret key: ', process.env.SECRET_KEY);
         res.status(200).send({ token })
     } catch (error) {
         
