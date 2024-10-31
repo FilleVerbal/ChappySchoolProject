@@ -12,7 +12,7 @@ async function getAllUsers(): Promise<WithId<UserProfile>[]> {
     }
 }
 
-async function getallUsersProjected(): Promise<WithId<UserProfile>[]> {
+async function getAllUsersProjected(): Promise<WithId<UserProfile>[]> {
     const col = getUserCollection()
     try {
         const result: WithId<UserProfile>[] = await col.find({}, {projection: {username: 1}}).toArray()
@@ -77,4 +77,4 @@ async function checkUsersForLogin(email: string, password: string): Promise<With
 //     }
 // }
 
-export { getAllUsers, postNewUser, checkUsersForLogin, getallUsersProjected }
+export { getAllUsers, postNewUser, checkUsersForLogin, getAllUsersProjected }

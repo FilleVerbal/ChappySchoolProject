@@ -13,7 +13,7 @@ async function startServer() {
         await getDb()
         app.use(cors())
         console.log('Databaseconnection successfull');
-
+        app.use('/', express.static('dist/'))
         app.use(express.json())
         app.use('/', (req: Request, _, next: NextFunction) => {
             console.log(`${req.method} ${req.url}`, req.body);
