@@ -34,6 +34,8 @@ router.post('/create', async (req: Request, res: Response): Promise<void> => {
 })
 
 router.post('/login', async (req: Request, res: Response): Promise<void> => {
+    console.log('Trying to reach login request');
+    
     if (!process.env.SECRET_KEY) {
         res.sendStatus(505)
         return

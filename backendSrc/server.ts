@@ -20,9 +20,9 @@ async function startServer() {
             next()            
         })
 
-        app.use('/channels', channelRouter)
-        app.use('/messages', messageRouter)
-        app.use('/users', userRouter)
+        app.use('/api/channels', channelRouter)
+        app.use('/api/messages', messageRouter)
+        app.use('/api/users', userRouter)
 
 
         app.listen(port, () => {
