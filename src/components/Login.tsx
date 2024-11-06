@@ -6,6 +6,7 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
+    // const { checkAuth, setUserInfo } = useAuthStore()
 
     const loginHandler = async () => {
         console.log('loginHandler called');

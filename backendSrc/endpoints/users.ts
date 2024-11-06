@@ -1,8 +1,8 @@
 import { WithId, InsertOneResult } from "mongodb"
 import { UserProfile } from '../data/datastructures.js'
 import { getUserCollection } from "../database/getdb.js"
-// import { NextFunction, Response, Request } from "express"
-// import jwt from 'jsonwebtoken'
+import { NextFunction, Response, Request } from "express"
+import jwt from 'jsonwebtoken'
 
 async function getAllUsers(): Promise<WithId<UserProfile>[]> {
     const col = getUserCollection()
@@ -44,22 +44,22 @@ async function checkUsersForLogin(email: string, password: string): Promise<With
     }
 }
 
-// const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
-//     const authHeader = req.headers['authorization']
-//     const token = authHeader && authHeader.split(' ')[1]
-//     if (!token) {
-//         res.sendStatus(401)
-//         return
-//     }
-//     jwt.verify(token, process.env.SECRET_KEY as string, (err: any, user: any) => {
-//         if (err) {
-//             res.sendStatus(403)
-//             return
-//         }
-//         req.user = user
-//         next()
-//     })
-// }
+const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    if (!token) {
+        res.sendStatus(401)
+        return
+    }
+    jwt.verify(token, process.env.SECRET_KEY as string, (err: any, user: any) => {
+        if (err) {
+            res.sendStatus(403)
+            return
+        }
+        req.user = user
+        next()
+    })
+}
 
 // async function updateUser(id: string, updatedUser: Partial<UserProfile>): Promise<UpdateResult> {
 //     const col = getUserCollection()
@@ -96,4 +96,4 @@ async function checkUsersForLogin(email: string, password: string): Promise<With
 //     }
 // }
 
-export { getAllUsers, postNewUser, checkUsersForLogin, getAllUsersProjected }
+export { getAllUsers, postNewUser, checkUsersForLogin, getAllUsersProjected, authenticateToken }
