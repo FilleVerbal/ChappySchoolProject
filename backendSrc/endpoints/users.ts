@@ -1,8 +1,8 @@
 import { WithId, InsertOneResult } from "mongodb"
 import { UserProfile } from '../data/datastructures.js'
 import { getUserCollection } from "../database/getdb.js"
-import { NextFunction, Response, Request } from "express"
-import jwt from 'jsonwebtoken'
+// import { NextFunction, Response, Request } from "express"
+// import jwt from 'jsonwebtoken'
 
 async function getAllUsers(): Promise<WithId<UserProfile>[]> {
     const col = getUserCollection()
