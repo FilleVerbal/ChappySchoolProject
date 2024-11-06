@@ -2,7 +2,7 @@ import { WithId, InsertOneResult } from "mongodb"
 import { UserProfile } from '../data/datastructures.js'
 import { getUserCollection } from "../database/getdb.js"
 import { NextFunction, Response, Request } from "express"
-import jwt from 'jsonwebtoken'
+import jwt, { JwtPayload } from 'jsonwebtoken'
 
 async function getAllUsers(): Promise<WithId<UserProfile>[]> {
     const col = getUserCollection()
@@ -44,7 +44,11 @@ async function checkUsersForLogin(email: string, password: string): Promise<With
     }
 }
 
-const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
+interface AuthenticatedRequest extends Request {
+    user?: string | JwtPayload;
+}
+
+const authenticateToken = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
     if (!token) {

@@ -6,7 +6,7 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
-    // const { checkAuth, setUserInfo } = useAuthStore()
+    const { checkAuth, setUserInfo } = useAuthStore()
 
     const loginHandler = async () => {
         console.log('loginHandler called');
@@ -32,8 +32,8 @@ const Login: React.FC = () => {
             const data = await response.json()
             const {token, username, userId} = data
             sessionStorage.setItem('authToken', token)
-            useAuthStore.getState().checkAuth()
-            useAuthStore.getState().setUserInfo(username, userId)
+            checkAuth()
+            setUserInfo(username, userId)
             setErrorMessage(null)
             console.log('I dids it wiiii', errorMessage);            
         } catch ( error) {

@@ -56,7 +56,7 @@ router.post('/login', async (req: Request, res: Response): Promise<void> => {
             { userid: user._id, email: user.email },
             String(process.env.SECRET_KEY) 
         )
-        res.status(200).send({ token, user: user })
+        res.status(200).send({ token, username: user.username, userId: user._id })
     } catch (error) {
         
         console.error('login error: ', error)
