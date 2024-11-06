@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../styles/login.css'
+import useAuthStore from '../data/store'
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('')
@@ -28,8 +29,10 @@ const Login: React.FC = () => {
                 return
             }
             const data = await response.json()
-            const {token} = data
+            const {token, username, userId} = data
             sessionStorage.setItem('authToken', token)
+            useAuthStore.getState().checkAuth()
+            useAuthStore.getState().setUserInfo(username, userId)
             setErrorMessage(null)
             console.log('I dids it wiiii', errorMessage);            
         } catch ( error) {

@@ -1,10 +1,12 @@
-// import { useState } from 'react'
+// import { useEffect } from 'react'
+// import useAuthStore from '../data/store'
 
 // const Header: React.FC = () => {
-//     const [isLoggedIn, setIsLoggedIn] = useState(false)
-//     const [username, setUsername] = useState('Guest')
+//     const { isLoggedIn, checkAuth, logout } = useAuthStore()
 
-//     // TODO clickfunctionality for logging in and out
+//     useEffect(() => {
+//         checkAuth()
+//     }, [checkAuth])
 
 //     return (
 //         <nav className='the-header'>

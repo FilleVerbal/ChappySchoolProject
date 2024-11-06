@@ -1,4 +1,24 @@
-section {
+section {   
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    border-radius: 7px;
+}
+.login-container > * {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-container-login > * {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-
