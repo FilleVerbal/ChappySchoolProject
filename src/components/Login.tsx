@@ -11,8 +11,7 @@ const Login: React.FC = () => {
     const navigate: NavigateFunction = useNavigate()
 
     const loginHandler = async () => {
-        console.log('loginHandler called');
-        
+        console.log('loginHandler called');        
         try {
             const response = await fetch('/api/users/login', {
                 method: 'POST',
@@ -41,8 +40,10 @@ const Login: React.FC = () => {
             console.log('I dids it wiiii', errorMessage);            
         } catch ( error) {
             setErrorMessage('Something happened, please try again later')
-        }
-        
+        }        
+    }
+    const skipHandler = () => {
+        navigate('/welcome')
     }
 
     //  TODO:
@@ -57,7 +58,7 @@ const Login: React.FC = () => {
             </div>
             <div className='btn-container-login'>
                 <button className='create-account-btn'> Create new account </button>
-                <button className='skip-btn'> Skip </button>
+                <button className='skip-btn' onClick={skipHandler}> Skip </button>
             </div>
         </section>
     )
