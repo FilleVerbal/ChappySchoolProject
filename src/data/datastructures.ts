@@ -21,6 +21,7 @@ export interface Message {
 }
 
 export interface Channel {
+    _id: string;
     name: string;
     isLocked: boolean;
     participants?: ObjectId[];

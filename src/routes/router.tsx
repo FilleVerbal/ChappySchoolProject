@@ -1,6 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 import Root from "./Root.tsx";
 import Landing from "./Landing.tsx";
+import Welcome from "./Welcome.tsx";
 
 const router = createHashRouter([
     {
@@ -11,6 +12,10 @@ const router = createHashRouter([
                 index: true,
                 element: <Landing />
 
+            },
+            {
+                path: '/welcome',
+                element: <Welcome />
             }
         ]
     }
