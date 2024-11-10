@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "npm run build-frontend",
     "build-frontend": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "npm run backend",
     "backend": "tsc --project tsconfig.backend.json && node --env-file .env ./backendDist/server.js",
     "build-backend": "tsc --project tsconfig.backend.json",
     "start-backend": "node --env-file .env ./backendDist/server.js"

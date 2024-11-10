@@ -9,11 +9,17 @@ export interface UserProfile {
     status: string
 }
 
+export interface FetchedUsers {
+    _id: string;
+    username: string;
+}
+
 export interface Message {
-    senderId?: ObjectId;
+    _id: string;
+    senderId?: string;
     content: string;
-    channelId?: ObjectId;
-    recipientId?: ObjectId;
+    channelId?: string;
+    recipientId?: string;
     createdAt: Date;
     updatedAt: Date;
     likes: number;

@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react'
-import { Channel } from '../data/datastructures.ts'
+import { useEffect } from 'react'
 import useAuthStore from '../data/store.ts'
 
 const ChannelSidebar: React.FC = () => {
-    const [channels, setChannels] = useState<Channel[]>([])
-    const { isLoggedIn } = useAuthStore()
+    const { isLoggedIn, channels, setChannels } = useAuthStore()
     // TODO: implement logic for channelfetching
     // TODO: also implement logic for active channel
     const getChannels = async () => {
