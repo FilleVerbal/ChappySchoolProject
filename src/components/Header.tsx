@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     return (
         <nav className='the-header'>
             <div>
-                <button className='header-chappy-btn'> Chappy </button>
+                <h3 className='header-chappy-btn'> Chappy </h3>
             </div>
             <div>
                 <p> {isLoggedIn ? username : 'Guest'} </p>

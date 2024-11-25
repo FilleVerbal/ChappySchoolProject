@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, FC } from 'react'
 import useAuthStore from '../data/store.ts'
+import '../styles/channelsidebar.css'
 
-const ChannelSidebar: React.FC = () => {
-    const { isLoggedIn, channels, setChannels } = useAuthStore()
-    // TODO: implement logic for channelfetching
+const ChannelSidebar: FC = () => {
+    const { isLoggedIn, channels, setChannels, setSelectedChannel, selectedChannel } = useAuthStore()
     // TODO: also implement logic for active channel
     const getChannels = async () => {
         try {
@@ -18,7 +18,19 @@ const ChannelSidebar: React.FC = () => {
     }
     useEffect(() => {
         getChannels()
-    }, [])
+    }, [setChannels])
+    useEffect(() => {
+        if (channels.length > 0) {
+            if (isLoggedIn) {
+                setSelectedChannel(channels[0]._id)
+            } else {
+                const firstUnlockedChannel = channels.find((channel) => !channel.isLocked)
+                if (firstUnlockedChannel) {
+                    setSelectedChannel(firstUnlockedChannel._id)
+                }
+            }
+        }
+    }, [channels, isLoggedIn, setSelectedChannel])
     // 🔒
     // 🔑
     return (
@@ -26,7 +38,7 @@ const ChannelSidebar: React.FC = () => {
 		<ul>
 			<li> [Channels] </li>
 			{channels.map(c => (
-                <li key={c._id} className={c.isLocked && !isLoggedIn ? 'locked-channel' : 'not-locked-channel'}>
+                <li key={c._id} className={`${c._id === selectedChannel ? "selected-channel channel-sidebar" : "channel-sidebar"} ${c.isLocked && !isLoggedIn ? "locked-channel" : ""}`} onClick={() => !c.isLocked || isLoggedIn ? setSelectedChannel(c._id) : null}>
                     <a href="#"> {c.name} </a>
                     {c.isLocked && !isLoggedIn && <span> 🔒 </span>}
                 </li>
