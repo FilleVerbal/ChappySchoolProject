@@ -1,3 +1,65 @@
-.selected-channel {
+.selected-channel,
+.selected-user {
     font-weight: bolder;
+}
+
+nav {
+    background-color: #B4A7D6;
+    width: 240px;
+    height: 100vh;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.channel-list,
+.dm-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dm-list {
+    margin-top: 1.5rem;
+}
+
+.sidebar-header {
+    color: #000;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.channel-sidebar,
+.user-sidebar {
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.channel-sidebar:hover,
+.user-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.channel-sidebar a,
+.user-sidebar a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.channel-sidebar a::before {
+    content: "# ";
+    opacity: 0.8;
+}
+
+.locked-channel {
+    opacity: 0.6;
+}
+
+.locked-channel span {
+    margin-left: 5px;
+    font-size: 12px;
 }

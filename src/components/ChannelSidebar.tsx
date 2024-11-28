@@ -3,7 +3,7 @@ import useAuthStore from '../data/store.ts'
 import '../styles/channelsidebar.css'
 
 const ChannelSidebar: FC = () => {
-    const { isLoggedIn, channels, setChannels, setSelectedChannel, selectedChannel } = useAuthStore()
+    const { isLoggedIn, channels, setChannels, setSelectedChannel, selectedChannel, users, selectedUser, setSelectedUser } = useAuthStore()
     // TODO: also implement logic for active channel
     const getChannels = async () => {
         try {
@@ -35,8 +35,8 @@ const ChannelSidebar: FC = () => {
     // 🔑
     return (
         <nav>
-		<ul>
-			<li> [Channels] </li>
+		<ul className='channel-list'>
+			<li className='sidebar-header'> [Channels] </li>
 			{channels.map(c => (
                 <li key={c._id} className={`${c._id === selectedChannel ? "selected-channel channel-sidebar" : "channel-sidebar"} ${c.isLocked && !isLoggedIn ? "locked-channel" : ""}`} onClick={() => !c.isLocked || isLoggedIn ? setSelectedChannel(c._id) : null}>
                     <a href="#"> {c.name} </a>
@@ -44,6 +44,14 @@ const ChannelSidebar: FC = () => {
                 </li>
             ))}
 		</ul>
+        <ul className='dm-list'>
+            <li className='sidebar-header'> [DM´s] </li>
+            {users.map((user) => (
+                <li key={user._id} className={`${user._id === selectedUser ? "selected-user user-sidebar" : "user-sidebar"}`} onClick={() => setSelectedUser(user._id)}>
+                    <a href='#'> {user.username} </a>
+                </li>
+            ))}
+        </ul>
 	</nav>
     )
 }

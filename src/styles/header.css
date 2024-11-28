@@ -1,0 +1,42 @@
+.the-header {
+    background-color: #B4A7D6;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-chappy-btn {
+    color: #000;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.the-header div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.the-header p {
+    margin: 0;
+    color: #000;
+}
+
+.the-header button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.the-header button:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}

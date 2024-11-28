@@ -1,8 +1,9 @@
 import useAuthStore from "../data/store.ts"
-import { useState, useEffect } from "react"
+import { useState, useEffect, FC } from "react"
 import { FetchedUsers, Message } from "../data/datastructures.ts"
+import '../styles/maincontent.css'
 
-const MainContent: React.FC = () => {
+const MainContent: FC = () => {
     const [input, setInput] = useState('')
     const {selectedChannel, selectedUser, messages, setMessages, userId, users, setUsers, channels} = useAuthStore()
 
@@ -79,6 +80,7 @@ const MainContent: React.FC = () => {
 
 
     return (
+        <>
         <section className="main-content-container">
             <div className="chat-area">
                 <section className="heading">
@@ -109,6 +111,7 @@ const MainContent: React.FC = () => {
                 </section>
             </div>
         </section>
+        </>
 
     )
 }
