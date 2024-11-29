@@ -37,7 +37,7 @@ const useAuthStore = create<AuthState>(set => ({
     },
     logout: () => {
         sessionStorage.removeItem('authToken')
-        set({ isLoggedIn : false, username: undefined, userId: undefined, selectedChannel: undefined, selectedUser: undefined, channels: [], users: []})
+        set({ isLoggedIn : false, username: undefined, userId: undefined, selectedChannel: undefined, selectedUser: undefined })
     },
     setUserInfo: (username, userId) => set({ username, userId}),
     setSelectedChannel: (channelId) => set({selectedChannel: channelId, selectedUser: undefined}),

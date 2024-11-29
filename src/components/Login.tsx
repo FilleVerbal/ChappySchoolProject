@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, FC } from 'react'
 import '../styles/login.css'
 import useAuthStore from '../data/store'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
-const Login: React.FC = () => {
+const Login: FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [errorMessage, setErrorMessage] = useState<string | null>(null)

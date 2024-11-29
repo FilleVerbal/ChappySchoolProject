@@ -1,18 +1,42 @@
 .app-container {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+}
+
+.the-header {
+    width: 100%;
+    height: 10rem;
+    background-color: #B4A7D6;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    z-index: 10;
 }
 
 .content-wrapper {
-    flex: 1;
     display: flex;
+    flex: 1;
     overflow: hidden;
 }
 
-/* Reset default margins and padding */
+nav.channel-sidebar {
+    width: 240px;
+    height: calc(100vh - 60px);
+    background-color: #B4A7D6;
+    overflow-y: auto;
+}
+
+.main-content-container {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #F3F0F7;
+    padding: 20px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -20,7 +44,6 @@ body, html {
     width: 100%;
 }
 
-/* Ensure proper box sizing */
 *, *::before, *::after {
     box-sizing: border-box;
 }
