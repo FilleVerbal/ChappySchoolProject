@@ -19,9 +19,9 @@ const messageSchema = Joi.object<Message>({
     channelId: Joi.string().optional().trim().min(24).max(24),
     recipientId: Joi.string().optional().trim().min(24).max(24),
     createdAt: Joi.date().required(),
-    updatedAt: Joi.date().required(),
-    likes: Joi.number().required().positive().precision(0).strict(),
-    dislikes: Joi.number().required().positive().precision(0).strict()
+    updatedAt: Joi.date().optional(),
+    likes: Joi.number().required().min(0).precision(0).strict(),
+    dislikes: Joi.number().required().min(0).precision(0).strict()
 }).with("recipientId", "senderId")
 
 export function validateMessage(message: Message): validationResult {

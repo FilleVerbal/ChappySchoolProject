@@ -18,6 +18,8 @@ router.get('/', async (_, res: Response<WithId<Message>[]>): Promise<void> => {
 router.post('/', async (req: Request, res: Response): Promise<void> => {
     const validationResult = validateMessage(req.body)
     if (!validationResult.success) {
+        console.log('validation is failing for some reason');
+        
         res.status(400).json({error: validationResult.error}); 
         return
     }

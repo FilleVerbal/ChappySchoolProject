@@ -16,9 +16,11 @@ const ChannelSidebar: FC = () => {
             console.error('Failed channel fetch', error)
         }
     }
+    
     useEffect(() => {
         getChannels()
     }, [setChannels])
+
     useEffect(() => {
         if (channels.length > 0) {
             if (isLoggedIn) {
@@ -44,6 +46,7 @@ const ChannelSidebar: FC = () => {
                 </li>
             ))}
 		</ul>
+        {isLoggedIn && (
         <ul className='dm-list'>
             <li className='sidebar-header'> [DM´s] </li>
             {users.map((user) => (
@@ -52,6 +55,8 @@ const ChannelSidebar: FC = () => {
                 </li>
             ))}
         </ul>
+
+        )}
 	</nav>
     )
 }

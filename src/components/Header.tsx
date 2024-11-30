@@ -1,5 +1,6 @@
 import useAuthStore from '../data/store'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
+import '../styles/header.css'
 
 const Header: React.FC = () => {
     const { isLoggedIn, logout, username } = useAuthStore()

@@ -65,7 +65,7 @@ const MainContent: FC = () => {
         try {
             const response = await fetch('/api/messages', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application(json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newMessage)
             })
             if (response.ok) {
@@ -103,7 +103,7 @@ const MainContent: FC = () => {
                 <section className="message-input">
                     <input
                         type="text"
-                        placeholder="Ditt meddelande..."
+                        placeholder="Say Something..."
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                     />

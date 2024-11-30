@@ -10,10 +10,10 @@ export interface UserProfile {
 }
 
 export interface Message {
-    senderId?: ObjectId;
+    senderId?: string;
     content: string;
-    channelId?: ObjectId;
-    recipientId?: ObjectId;
+    channelId?: string;
+    recipientId?: string;
     createdAt: Date;
     updatedAt: Date;
     likes: number;
