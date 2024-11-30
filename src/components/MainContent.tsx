@@ -33,6 +33,7 @@ const MainContent: FC = () => {
         getMessages()
         getUsers()
     }, [setMessages, setUsers])
+
     const channelName: string = channels.find(channel => channel._id === selectedChannel)?.name || ''
     const dmUserName: string = users.find(user => user._id === selectedUser)?.username || ''
 
@@ -92,14 +93,33 @@ const MainContent: FC = () => {
                         <span>Welcome</span>
                     )}
                 </section>
-                <section className="history">
-                    {filteredMessages.map(m => (
-                        <section key={m._id} className={m.senderId === userId ? 'my-messages' : 'messages'}>
-                            <p>{m.senderId === userId ? 'You' :m.senderId} : {m.content}</p>
-                            <p>{new Date(m.createdAt).toLocaleTimeString()}</p>
-                        </section>
-                    ))}
-                </section>
+                    <section className="history">
+                        {filteredMessages.map((m) => {
+                            const senderName =
+                                m.senderId === userId
+                                    ? "You"
+                                    : users.find((user) => user._id === m.senderId)?.username ||
+                                      "Guest";
+
+                            return (
+                                <section
+                                    key={m._id}
+                                    className={
+                                        m.senderId === userId
+                                            ? "my-messages"
+                                            : "messages"
+                                    }
+                                >
+                                    <p>
+                                        {senderName}: {m.content}
+                                    </p>
+                                    <p>
+                                        {new Date(m.createdAt).toLocaleString()}
+                                    </p>
+                                </section>
+                            );
+                        })}
+                    </section>
                 <section className="message-input">
                     <input
                         type="text"

@@ -41,7 +41,7 @@ const ChannelSidebar: FC = () => {
 			<li className='sidebar-header'> [Channels] </li>
 			{channels.map(c => (
                 <li key={c._id} className={`${c._id === selectedChannel ? "selected-channel channel-sidebar" : "channel-sidebar"} ${c.isLocked && !isLoggedIn ? "locked-channel" : ""}`} onClick={() => !c.isLocked || isLoggedIn ? setSelectedChannel(c._id) : null}>
-                    <a href="#"> {c.name} </a>
+                    <span># {c.name} </span>
                     {c.isLocked && !isLoggedIn && <span> 🔒 </span>}
                 </li>
             ))}
@@ -51,7 +51,7 @@ const ChannelSidebar: FC = () => {
             <li className='sidebar-header'> [DM´s] </li>
             {users.map((user) => (
                 <li key={user._id} className={`${user._id === selectedUser ? "selected-user user-sidebar" : "user-sidebar"}`} onClick={() => setSelectedUser(user._id)}>
-                    <a href='#'> {user.username} </a>
+                    <span> {user.username} </span>
                 </li>
             ))}
         </ul>
