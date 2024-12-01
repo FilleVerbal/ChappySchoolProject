@@ -1,50 +1,126 @@
-# React + TypeScript + Vite
+# Chappy API Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the API for a chat app with Node.ts, Express, and MongoDB Atlas. The API provides functionality for users, channels, and messages. Below is the detailed information on how to interact with the API. 
 
-Currently, two official plugins are available:
+## Base URL
+/api
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Endpoints
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Channels
 
-- Configure the top-level `parserOptions` property like this:
+1. **Get All Channels**
+   - **URL**: `/channels`
+   - **Method**: `GET`
+   - **Description**: Fetch all channels.
+   - **Response**:
+     ```json
+        {
+            _id: ObjectId;
+            name: string;
+            isLocked: boolean;
+            participants?: string[];
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: ObjectId;
+        }
+     ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Add a New Channel**
+   - **URL**: `/channels`
+   - **Method**: `POST`
+   - **Body**:
+     ```json
+        {
+            name: string;
+            isLocked: boolean;
+            participants?: string[];
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: ObjectId;
+        }
+     ```
+   - **Description**: Add a new channel to the database.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Messages
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Get All Messages**
+   - **URL**: `/messages`
+   - **Method**: `GET`
+   - **Description**: Fetch all messages.
+   - **Response**:
+     ```json
+        {
+            _id: ObjectId;
+            senderId?: string;
+            content: string;
+            channelId?: string;
+            recipientId?: string;
+            createdAt: Date;
+            updatedAt: Date;
+            likes: number;
+            dislikes: number;
+        }
+     ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Send message**
+   - **URL**: `/message`
+   - **Method**: `POST`
+   - **Body**:
+     ```json
+        {
+            senderId?: string;
+            content: string;
+            channelId?: string;
+            recipientId?: string;
+            createdAt: Date;
+            updatedAt: Date;
+            likes: number;
+            dislikes: number;
+        }
+     ```
+   - **Description**: Send message in channel or dm.
+
+### Users
+
+1. **Get All Users**
+   - **URL**: `/users`
+   - **Method**: `GET`
+   - **Description**: Fetch all users.
+   - **Response**:
+     ```json
+        {
+            _id: string;
+            username: string;
+        }
+     ```
+
+2. **Login user**
+   - **URL**: `/users/login`
+   - **Method**: `POST`
+   - **Body**:
+     ```json
+        {
+           email: string;
+           password: string;
+        }
+     ```
+   - **Response on success**:
+     ```json
+        {
+              token: string;        // JWT to authenticate future requests
+              username: string;     // The username of the logged-in user
+              userId: string;       // The unique ID of the user
+        }
+     ```
+   - **Description**: Login and get a jwt.
+
+
+## Validation
+
+All incoming requests are validated using Joi to ensure the correct data structure and will respond with the appropriate status codes.
+
+## Frontend Integration
+
+For frontend developers, use fetch or any other HTTP client to interact with these endpoints. Ensure that your requests include the appropriate headers and body (for POST/PUT requests).

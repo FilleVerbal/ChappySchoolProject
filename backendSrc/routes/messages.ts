@@ -3,7 +3,6 @@ import { WithId } from 'mongodb'
 import { Message } from '../data/datastructures.js'
 import { getAllMessages, postNewMessage } from '../endpoints/messages.js'
 import { validateMessage } from '../validation/messageValidation.js'
-// import { authenticateToken } from '../endpoints/users.js'
 
 export const router: Router = express.Router()
 
