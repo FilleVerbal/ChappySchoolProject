@@ -5,7 +5,7 @@ import '../styles/maincontent.css'
 
 const MainContent: FC = () => {
     const [input, setInput] = useState('')
-    const {selectedChannel, selectedUser, messages, setMessages, userId, users, setUsers, channels} = useAuthStore()
+    const {selectedChannel, selectedUser, messages, setMessages, userId, users, setUsers, channels, username} = useAuthStore()
 
     const getMessages = async () => {
         try {
@@ -15,7 +15,7 @@ const MainContent: FC = () => {
                 setMessages(data)
             }
         } catch (error) {
-            console.error('Failed to get messages')
+            console.error('Failed to get messages', error)
         }
     }
     const getUsers = async () => {
@@ -97,7 +97,7 @@ const MainContent: FC = () => {
                         {filteredMessages.map((m) => {
                             const senderName =
                                 m.senderId === userId
-                                    ? "You"
+                                    ? username
                                     : users.find((user) => user._id === m.senderId)?.username ||
                                       "Guest";
 

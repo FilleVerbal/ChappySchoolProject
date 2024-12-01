@@ -1,0 +1,92 @@
+[
+    {
+        "senderId": "671785d43c293873cbd2ac1d",
+        "content": "Can someone help me debug this JavaScript code?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:00:30Z",
+        "updatedAt": "2023-12-01T14:00:30Z",
+        "likes": 5,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1c",
+        "content": "What's the best way to learn React?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:01:30Z",
+        "updatedAt": "2023-12-01T14:01:30Z",
+        "likes": 8,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1b",
+        "content": "I'm stuck on this Python loop, any advice?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:02:30Z",
+        "updatedAt": "2023-12-01T14:02:30Z",
+        "likes": 6,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1d",
+        "content": "Here's a tip for optimizing your SQL queries.",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:03:30Z",
+        "updatedAt": "2023-12-01T14:03:30Z",
+        "likes": 12,
+        "dislikes": 2
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1c",
+        "content": "Can someone explain the difference between `let` and `const` in JavaScript?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:04:30Z",
+        "updatedAt": "2023-12-01T14:04:30Z",
+        "likes": 10,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1b",
+        "content": "I need help with CSS grid layout. Any resources?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:05:30Z",
+        "updatedAt": "2023-12-01T14:05:30Z",
+        "likes": 7,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1d",
+        "content": "Just found a cool way to use hooks in React!",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:06:30Z",
+        "updatedAt": "2023-12-01T14:06:30Z",
+        "likes": 9,
+        "dislikes": 2
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1c",
+        "content": "Anyone familiar with TypeScript? I have a question.",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:07:30Z",
+        "updatedAt": "2023-12-01T14:07:30Z",
+        "likes": 15,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1b",
+        "content": "Here's a great tutorial on using MongoDB with Node.js.",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:08:30Z",
+        "updatedAt": "2023-12-01T14:08:30Z",
+        "likes": 14,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac1d",
+        "content": "Can someone review my pull request?",
+        "channelId": "671785f23c293873cbd2ac21",
+        "createdAt": "2023-12-01T14:09:30Z",
+        "updatedAt": "2023-12-01T14:09:30Z",
+        "likes": 20,
+        "dislikes": 2
+    }
+]

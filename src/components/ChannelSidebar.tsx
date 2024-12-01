@@ -46,7 +46,23 @@ const ChannelSidebar: FC = () => {
                 </li>
             ))}
 		</ul>
-        {isLoggedIn && (
+        <ul className="dm-list">
+        <li className="sidebar-header"> [DM´s] </li>
+        {users.map((user) => (
+            <li
+                key={user._id}
+                className={`${user._id === selectedUser ? "selected-user user-sidebar" : "user-sidebar"} ${
+                    !isLoggedIn ? "locked-user" : ""
+                }`}
+                onClick={() => isLoggedIn ? setSelectedUser(user._id) : null}
+            >
+                <span>{user.username}</span>
+                {!isLoggedIn && <span> 🔒 </span>}
+            </li>
+        ))}
+    </ul>
+        {/* old code that i like better but goes against the assignment */}
+        {/* {isLoggedIn && (
         <ul className='dm-list'>
             <li className='sidebar-header'> [DM´s] </li>
             {users.map((user) => (
@@ -56,7 +72,7 @@ const ChannelSidebar: FC = () => {
             ))}
         </ul>
 
-        )}
+        )} */}
 	</nav>
     )
 }

@@ -1,0 +1,92 @@
+[
+    {
+        "senderId": "671785d43c293873cbd2ac16",
+        "content": "Excited for the new game launch tonight!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:45:30Z",
+        "updatedAt": "2023-12-01T13:45:30Z",
+        "likes": 12,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac17",
+        "content": "Just reached level 50 in the game!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:46:30Z",
+        "updatedAt": "2023-12-01T13:46:30Z",
+        "likes": 20,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac18",
+        "content": "Looking for a squad to join for tonight's raid.",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:47:30Z",
+        "updatedAt": "2023-12-01T13:47:30Z",
+        "likes": 15,
+        "dislikes": 2
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac16",
+        "content": "Anyone else experiencing lag issues?",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:48:30Z",
+        "updatedAt": "2023-12-01T13:48:30Z",
+        "likes": 8,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac17",
+        "content": "Best game of the year, hands down!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:49:30Z",
+        "updatedAt": "2023-12-01T13:49:30Z",
+        "likes": 22,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac18",
+        "content": "Check out my latest stream highlights!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:50:30Z",
+        "updatedAt": "2023-12-01T13:50:30Z",
+        "likes": 18,
+        "dislikes": 3
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac16",
+        "content": "The new DLC is fantastic!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:51:30Z",
+        "updatedAt": "2023-12-01T13:51:30Z",
+        "likes": 14,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac17",
+        "content": "Organizing a tournament, who's in?",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:52:30Z",
+        "updatedAt": "2023-12-01T13:52:30Z",
+        "likes": 25,
+        "dislikes": 0
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac18",
+        "content": "Need help with the final boss, any tips?",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:53:30Z",
+        "updatedAt": "2023-12-01T13:53:30Z",
+        "likes": 10,
+        "dislikes": 1
+    },
+    {
+        "senderId": "671785d43c293873cbd2ac16",
+        "content": "Streaming live now, join me!",
+        "channelId": "671785f23c293873cbd2ac20",
+        "createdAt": "2023-12-01T13:54:30Z",
+        "updatedAt": "2023-12-01T13:54:30Z",
+        "likes": 30,
+        "dislikes": 2
+    }
+]
