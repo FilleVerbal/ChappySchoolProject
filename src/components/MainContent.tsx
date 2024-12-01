@@ -34,6 +34,8 @@ const MainContent: FC = () => {
         getUsers()
     }, [setMessages, setUsers])
 
+    // Testade att ta bort dependency arrayen ovan men då fick konsolen fnatt och felmeddelandena bara hopade sig snabbare än jag hann kika på de så de får vara där trots att linten säger att de inte ska vara där
+
     const channelName: string = channels.find(channel => channel._id === selectedChannel)?.name || ''
     const dmUserName: string = users.find(user => user._id === selectedUser)?.username || ''
 
@@ -57,11 +59,14 @@ const MainContent: FC = () => {
         const newMessage: Partial<Message> = {
             content: input,
             senderId: userId,
-            channelId: selectedChannel,
-            recipientId: selectedUser,
             createdAt: new Date(),
             likes: 0,
             dislikes: 0,
+        }
+        if (selectedChannel) {
+            newMessage.channelId = selectedChannel
+        } else if (selectedUser) {
+            newMessage.recipientId = selectedUser
         }
         try {
             const response = await fetch('/api/messages', {
@@ -97,7 +102,7 @@ const MainContent: FC = () => {
                         {filteredMessages.map((m) => {
                             const senderName =
                                 m.senderId === userId
-                                    ? username
+                                    ? username || "Guest"
                                     : users.find((user) => user._id === m.senderId)?.username ||
                                       "Guest";
 
