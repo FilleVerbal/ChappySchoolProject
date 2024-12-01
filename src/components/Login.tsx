@@ -38,8 +38,8 @@ const Login: FC = () => {
             setErrorMessage(null)
             navigate('/welcome')
             console.log('I dids it wiiii', errorMessage);            
-        } catch ( error) {
-            setErrorMessage('Something happened, please try again later')
+        } catch ( error ) {
+            setErrorMessage('Something happened, please try again later' + error)
         }        
     }
     const skipHandler = () => {
@@ -57,7 +57,7 @@ const Login: FC = () => {
                 <button className='login-btn' onClick={() => {console.log('loginbutton clicked'); loginHandler()}}> Login</button>
             </div>
             <div className='btn-container-login'>
-                <button className='create-account-btn'> Create new account </button>
+                {/* <button className='create-account-btn'> Create new account </button> */}
                 <button className='skip-btn' onClick={skipHandler}> Skip </button>
             </div>
         </section>

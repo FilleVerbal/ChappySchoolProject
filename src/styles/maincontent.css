@@ -1,6 +1,6 @@
 .main-content-container {
-    margin-left: 240px; /* Same as sidebar width */
-    margin-top: 60px; /* Same as header height */
+    margin-left: 240px; 
+    margin-top: 4rem; 
     height: calc(100vh - 60px);
     background-color: #F3F0F7;
 }
@@ -24,6 +24,7 @@
 .history {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,3 +1,6 @@
+body {
+    background-color: #F3F0F7;
+}
 section {   
     width: 100vw;
     display: flex;
@@ -11,6 +14,7 @@ input {
 }
 button {
     width: 170px;
+    background-color: #B4A7D6;
 }
 .login-container {
     justify-content: center;
