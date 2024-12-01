@@ -1,19 +1,28 @@
+* {
+    box-sizing: border-box;
+}
 .main-content-container {
     margin-left: 240px; 
-    margin-top: 4rem; 
+    margin-top: 3rem; 
     height: calc(100vh - 60px);
+    width: calc(100% - 240px);
+    max-width: calc(100% - 240px);
+    /* width: 100vw; */
     background-color: #F3F0F7;
 }
+
 
 .chat-area {
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* max-width: 100%; */
 }
 
 .heading {
+    margin-top: 0;
     padding: 20px;
-    border-bottom: 1px solid #B4A7D6;
+    /* border-bottom: 1px solid #B4A7D6; */
     font-size: 18px;
 }
 
@@ -52,10 +61,11 @@
 }
 
 .message-input {
+    border-top: 1px solid #B4A7D6 ;
     padding: 20px;
     display: flex;
     gap: 10px;
-    background-color: #B4A7D6;
+    background-color: #F3F0F7;
     border-radius: 10px;
     margin: 20px;
 }
@@ -81,6 +91,7 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-bottom: 1rem;
 }
 
 .message-input button:hover {

@@ -53,12 +53,8 @@
     font-size: 14px;
 }
 
-.channel-sidebar a::before {
-    content: "# ";
-    opacity: 0.8;
-}
-
-.locked-channel {
+.locked-channel,
+.locked-user {
     opacity: 0.6;
 }
 

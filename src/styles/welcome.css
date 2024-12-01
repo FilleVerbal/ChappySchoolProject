@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 1;
 }
 
 .content-wrapper {
@@ -29,7 +29,7 @@
 
 .main-content-container {
     flex: 1;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     background-color: #F3F0F7;
     padding: 20px;
 }
