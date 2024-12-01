@@ -36,7 +36,7 @@ const ChannelSidebar: FC = () => {
     // 🔒
     // 🔑
     return (
-        <nav>
+        <nav className='channel-sidebar-nav'>
 		<ul className='channel-list'>
 			<li className='sidebar-header'> [Channels] </li>
 			{channels.map(c => (

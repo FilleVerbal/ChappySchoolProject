@@ -1,6 +1,7 @@
 
-nav {
+.channel-sidebar-nav {
     background-color: #B4A7D6;
+    margin-top: 4rem;
     width: 240px;
     height: 100vh;
     padding: 20px 0;
